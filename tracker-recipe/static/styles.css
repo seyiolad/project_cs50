@@ -1,0 +1,342 @@
+/* Fix nav position */
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* push down the main body from the navbar */
+main {
+  margin-top: 80px; /* Adjust this value according to your navbar height */
+}
+
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+/*Put page scroll to the body*/
+body {
+    overflow-y: scroll;
+  }
+
+
+/*remove bullets from links*/
+/* aside ul, */
+ul {
+    list-style-type: none;
+  }
+
+/*remove link underline */
+/* aside ul li a, */
+a {
+    text-decoration: none;
+}
+
+.button {
+    margin-top: 60px;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: #0d6efd;
+    border: none;
+    cursor: pointer;
+
+}
+
+.button:hover {
+    color: white;
+    background-color: #0d6efd;
+    box-shadow: 0 0 10px #0d6efd;
+}
+
+/* Style for fixed search label */
+.search-label {
+    position: fixed;
+    top: 45%;
+    left: 43%;
+    background-color: white;
+
+  }
+
+  .btn-top-margin{
+    margin-top:20px
+  }
+
+  h1, h2 {
+    margin-bottom: 20px;
+  }
+
+
+   table {
+    width: 100%; /* set the height of the container to your desired value */
+
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+
+
+  .home-header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(welcome.jpg); /*linear gradient to make the image darker */
+    background-size: cover; /* cover means actual and not zoomed in image*/
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.welcome-text-box{
+    position: absolute; /* we want the box to be absolutely positioned so we wont use the fluid grid that we setup cause that's the only way we can vertically and horizontally centered it */
+    width: 1140px;  /* assign the width of the row */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*Translate the element half of its width and height, up and to the left */
+    margin-top: 20px;
+
+}
+
+.welcome-text-box h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 240%;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+}
+
+.long-copy {
+  text-align: justify;
+  margin: auto;
+  max-width: 600px;
+  color: white;
+}
+
+.container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("profile-back.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+/* Style the sub-menu */
+.recipe-menu {
+  display: none;
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  z-index: 3;
+}
+
+.nav-item:hover .recipe-menu {
+  display: block;
+}
+
+.recipe-menu li {
+  display: block;
+  padding: 10px 20px;
+}
+
+.recipe-menu li:hover {
+  background-color: #eee;
+}
+
+/* This fixes the sub-menu to recipe */
+.only{
+  position: absolute;
+}
+
+/* Ensure the form fields are side by side */
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-container > div {
+  width: calc(50% - 10px);
+  margin-bottom: 10px;
+}
+
+.form-container > div:nth-child(3),
+.form-container > div:nth-child(4) {
+  width: 100%;
+}
+
+.form-container input[type=text],
+.form-container input[type=number] {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.form-container textarea {
+  display: block;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.form-label{
+  font-weight: bold;
+}
+
+/* Set the width and height of the email address field */
+.emails{
+  width: 50%;
+  height: 40px;
+  margin: 0 auto;
+}
+
+/* Set the width and height of the text area */
+.message {
+  width: 50%;
+  height: 200px;
+  margin: 0 auto;
+}
+
+/* Set the width of the table columns for shopping list ingredients*/
+table .title{
+  width: 30%
+}
+
+table .recipeID{
+  width: 30%
+}
+
+table .ingredients {
+  width: 50%
+}
+
+/* justy the td and th */
+.shop_ingredients th, td{
+  text-align: left;
+}
+
+.shop_ingredients tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.shop_ingredients tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.ingreditents-list{
+  margin-top: 20px;
+}
+
+table.list {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Give the checkbox a little spacing */
+.title input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+
+
+/* Table settings for View menu */
+.table_views{
+  text-align: justify;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+}
+
+.table_views th, td {
+  padding: 5px; /* add padding for readability */
+  /* max-height: 20px; */   /* set the maximum height of the table cell */
+  /* overflow-y: auto; */   /* enable vertical scroll if the content exceeds the height */
+
+}
+
+.table_views .view_title {
+  width: 14%;
+}
+
+.table_views .view_ingredients {
+  width: 15%;
+
+}
+
+.table_views .view_instructions {
+  width: 15%;
+}
+
+.table_views .view_image {
+  width: 10%;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+
+.table_views .view_sourceUrl {
+  width: 10%;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+
+.table_views .view_recipeID {
+  width: 8%;
+}
+
+.table_views .view_time {
+  width: 8%;
+}
+
+.scrollable-col {
+  height: 100px; /* set desired height */
+}
+.scrollable-col div {
+  height: 100%;
+  overflow: auto;
+}
+
+
+/* Search details */
+
+.search-label{
+  position:absolute;
+  margin-top: 30px;
+}
+
+/* search result scroll */
+.scroll-container {
+  height: 300px; /* set the height to whatever you prefer */
+  overflow: auto; /* set the overflow to auto to enable the scrollbar */
+  margin-top: 50px;
+}
+
+

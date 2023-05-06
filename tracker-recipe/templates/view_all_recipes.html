@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}My Online Recipes{% endblock %}
+
+{% block main %}
+  <h1>Combined Recipes</h1>
+  {% if recipes %}
+      <table class="shop_ingredients table_views">
+          <thead>
+            <tr>
+              <th class="view_title">Title</th>
+              <th class="view_ingredients">Ingredients</th>
+              <th class="view_instructions">Instructions</th>
+              <th class="view_image">Image Url</th>
+              <th class="view_sourceUrl">Source Url</th>
+              <th class="view_recipeID">Recipe ID</th>
+              <th class="view_time">Timestamp</th>
+          </thead>
+          <tbody>
+              {% for recipe in recipes %}
+              <tr>
+                <td class="view_title">{{ recipe["title"] }}</td>
+                <td class="view_ingredients scrollable-col"><div>{{ recipe["ingredients"] }}</div></td>
+                <td class="view_instructions scrollable-col"><div>{{ recipe["instructions"] }}</div></td>
+                <td class="view_image"><a href="{{ recipe['image'] }}">{{ recipe['image'] }}</a></td>
+                <td class="view_sourceUrl"><a href="{{ recipe['sourceUrl'] }}">{{ recipe['sourceUrl'] }}</a></td>
+                <td class="view_recipeID">{{ recipe["recipe_id"] }}</td>
+                <td class="view_time">{{ recipe["created_on"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  {% else %}
+    <p>No recipes added yet. <a href="{{ url_for('search') }}">Find recipes</a></p>
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <h2>Delete Recipe</h2>
+  <form method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="recipe_id" name="recipe_id" placeholder="Enter Recipe ID" type="number" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+  {% if recipe %}
+  <form action="{{url_for('update_delete_recipe', table=table, recipe_id=recipe.recipe_id)}}" method="POST" >
+    <div class="mb-3 form-container">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="title" name="title" value="{{ recipe.title}}" type="text" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="recipe_id" class="form-label">Recipe ID</label>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="recipe_id" name="recipe_id" value="{{ recipe.recipe_id}}" type="number" readonly>
+        </div>
+    </div>
+    <div class="mb-3 form-container">
+        <div class="mb-3">
+            <label for="image" class="form-label">Image URL</label>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="image" name="image" value="{{ recipe.image}}" type="text" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="sourceUrl" class="form-label">Source URL</label>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="sourceUrl" name="sourceUrl" value="{{ recipe.sourceUrl}}" type="text" readonly>
+        </div>
+    </div>
+    <div class="mb-3 form-container">
+        <div class="mb-3">
+            <label for="ingredients" class="form-label">Ingredients</label>
+            <textarea autocomplete="off" autofocus class="form-control mx-auto w-auto" id="ingredients" name="ingredients" readonly>{{ recipe.ingredients }}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="instructions" class="form-label">Instructions</label>
+            <textarea autocomplete="off" autofocus class="form-control mx-auto w-auto" id="instructions" name="instructions" readonly>{{ recipe.instructions }}</textarea>
+        </div>
+    </div>
+    <div class="mb-3">
+            <label for="servings" class="form-label">Servings</label>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="servings" name="servings" value="{{ recipe.servings }}" type="number" readonly>
+    </div>
+    <button type="submit" class="btn btn-primary">Delete Recipe</button>
+  </form>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+
+{% block title %} Home - Recipe Tracker {% endblock %}
+
+{% block main %}
+    <h1>Welcome to Tracker Recipe!</h1>
+            <header class = "home-header">
+                <div class="welcome-text-box">
+                    <h1>Keep your favorite recipes organized and easily accessible.<br>Never lose a recipe again with our intuitive recipe tracker. </h1>
+                    <a class="btn btn-primary btn-top-margin" href="{{ url_for('profile') }}">Show me more</a>
+                    <a class="btn btn-primary btn-top-margin"  href="{{ url_for('search') }}">Recipe Search</a>
+                </div>
+            </header>
+
+{% endblock %}
+

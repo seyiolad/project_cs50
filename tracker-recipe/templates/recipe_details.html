@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ recipe.title }}{% endblock %}
+
+{% block main %}
+  <h1>{{ recipe.title }}</h1>
+  <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+
+  <p>Servings: {{ recipe.servings }}</p>
+
+
+  <h2>Ingredients</h2>
+  <ul>
+    {% set ingredients = [] %}
+    {% for ingredient in recipe.extendedIngredients %}
+      <li>{{ ingredient.original }}</li>
+      {% set _ = ingredients.append(ingredient.original) %}
+    {% endfor %}
+  </ul>
+
+  <h2>Instructions</h2>
+  <ol>
+    {% set instructions = [] %}
+    {% for instruction in recipe.analyzedInstructions[0].steps %}
+      <li>{{ instruction.step }}</li>
+      {% set _ = instructions.append(instruction.step) %}
+    {% endfor %}
+  </ol>
+
+
+  <form id = "add-recipe-form" action="{{ url_for('add_recipe', recipe_id=recipe.id) }}" method="POST" hidden>
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" name="title" value="{{ recipe.title }}" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Image URL</label>
+      <input type="text" class="form-control" id="image" name="image" value="{{ recipe.image }}" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Ingredients</label>
+      <textarea class="form-control" id="ingredients" name="ingredients" rows="3" readonly>{{ '\n'.join(ingredients) }}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="sourceUrl" class="form-label">Source URL</label>
+      <input type="text" class="form-control" id="sourceUrl" name="sourceUrl" value="{{ recipe.sourceUrl }}" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="servings" class="form-label">Servings</label>
+      <input type="number" class="form-control" id="servings" name="servings" value="{{ recipe.servings }}" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="instructions" class="form-label">Instructions</label>
+      <textarea class="form-control" id="instructions" name="instructions" rows="3" readonly>{{ '\n'.join(instructions) }}</textarea>
+    </div>
+  </form>
+  <a href="{{ url_for('search') }}" class="btn btn-primary">Back to Search Results</a>
+  <button type="submit" form="add-recipe-form" class="btn btn-primary">Add to Recipes</button>
+
+{% endblock %}
+
+
+
+

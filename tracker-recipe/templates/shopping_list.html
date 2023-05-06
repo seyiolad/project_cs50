@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <h2> Check the Box for Desired Ingredients</h2>
+  <form action="{{ url_for('shopping_list_ingredients') }}" method="POST">
+    <table class="shop_ingredients list" >
+      <thead>
+         <tr>
+             <th class="title">Title</th>
+             <th class="recipeID">Recipe ID</th>
+         </tr>
+     </thead>
+     <tbody>
+      {% for recipe in recipes %}
+      <tr>
+        <td class="title"><input type="checkbox" name="recipe_ids" id="{{ recipe.recipe_id }}" value="{{ recipe.recipe_id }}">{{ recipe["title"] }}</td>
+        <td class="recipeID">{{ recipe["recipe_id"] }}</td>
+      </tr>
+    {% endfor %}
+
+
+    </tbody>
+  </table>
+    <button type="submit" class="btn btn-primary ingreditents-list">Get Ingredients</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+
+{% block title %} Add My Recipe {% endblock %}
+
+{% block main %}
+<h1>Add My Recipe</h1>
+
+<form action="/add_myrecipe" method="POST" >
+  <div class="mb-3 form-container">
+    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="title" name="title" placeholder="Title of Recipe" type="text" required>
+    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="recipe_id" name="recipe_id" placeholder="Recipe ID (Up to 10 digits)" type="text" pattern="[0-9]{1,10}" required>
+  </div>
+  <div class="mb-3 form-container">
+    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="image" name="image" placeholder="Image URL" type="text">
+    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="sourceUrl" name="sourceUrl" placeholder="source URL" type="text">
+  </div>
+  <div class="mb-3 form-container">
+    <textarea autocomplete="off" autofocus class="form-control mx-auto w-auto" id="ingredients" name="ingredients" placeholder="Ingredients"></textarea>
+    <textarea autocomplete="off" autofocus class="form-control mx-auto w-auto" id="instructions" name="instructions" placeholder="Instructions"></textarea>
+  </div>
+  <div class="mb-3 form-container">
+    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="servings" name="servings" placeholder="Servings" type="number">
+  </div>
+  <a href="{{'/view_myrecipes'}}"  class="btn btn-primary">View Added Recipe</a>
+  <button type="submit"  class="btn btn-primary">Add to My Recipes</button>
+  </form>
+
+{% endblock %}

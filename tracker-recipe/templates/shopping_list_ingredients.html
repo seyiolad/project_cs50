@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <h2>Shopping List Ingredients</h2>
+  <table class="shop_ingredients" >
+     <thead>
+        <tr>
+            <th class="title">Title</th>
+            <th class="recipeID">Recipe ID</th>
+            <th class="ingredients">Ingredients</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recipe in recipes %}
+        <tr>
+            <td class="title">{{ recipe["title"] }}</td>
+            <td class="recipeID">{{ recipe["recipe_id"] }}</td>
+            <td class="ingredients">{{ recipe["ingredients"] }}</td>
+        </tr>
+      {% endfor %}
+   </tbody>
+</table>
+{% endblock %}

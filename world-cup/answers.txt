@@ -1,0 +1,24 @@
+Times:
+
+10 simulations:      0m0.117s
+100 simulations:     0m0.032s
+1000 simulations:    0m0.033s
+10000 simulations:   0m0.138s
+100000 simulations:  0m0.876s
+1000000 simulations: 0m8.430s
+
+Questions:
+
+Which predictions, if any, proved incorrect as you increased the number of simulations?:
+
+As the number of simulations increases, the program's predictions become more accurate. However,
+in the initial simulations, the program's predictions are less accurate and can have some incorrect
+predictions just like the first prediction.
+
+Suppose you're charged a fee for each second of compute time your program uses.
+After how many simulations would you call the predictions "good enough"?:
+
+It depends on the level of accuracy needed for the predictions to be considered "good enough".
+As we increase the number of simulations, the predictions become more accurate. However, there
+is a tradeoff between accuracy and computation time/cost. So how bouyant one is might actually
+affect the number of simulation one does.

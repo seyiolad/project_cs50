@@ -1,0 +1,16 @@
+
+{% extends "layout.html" %}
+
+{% block main %}
+<form method="post">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address(es)</label>
+      <input type="text" class="form-control emails"  id="emails" name="emails" placeholder="Enter email address(es)" required>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea class="form-control message" id="message" name="message" placeholder="Enter message (optional)"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Email</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}Search{% endblock %}
+
+{% block main %}
+  <h1>Search</h1>
+  <form action="/search" method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="query" name="query" placeholder="Recipe/Ingredient Search" type="text" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  {% if results %}
+  <div class="scroll-container">
+    <h2 class="search-label">Search results:</h2>
+    <div class="scroll-pane">
+      <ul>
+        {% for result in results %}
+        <li><a href="{{ url_for('recipe_details', result_id=result.id) }}">{{ result.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}
+{% endblock %}
+

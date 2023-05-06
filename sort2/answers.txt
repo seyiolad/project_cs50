@@ -1,0 +1,17 @@
+sort1 uses: TODO
+    Selection sorting algorithm.
+How do you know?: TODO
+    It is the slowest of the three programs when sorting a shuffled list,
+    which is the worst-case scenario for selection sort.
+
+sort2 uses: TODO
+    Bubble sorting algorithm
+How do you know?: TODO
+    It is found to be the slowest of the three programs when sorting a reversed list,
+    which is the worst-case scenario for bubble sort.
+
+sort3 uses: TODO
+    Merge sorting algorithm
+How do you know?: TODO
+    Considering the time taking for sorting, it is the fastest of the three programs
+    when sorting a shuffled list, which is the best-case scenario for merge sort.

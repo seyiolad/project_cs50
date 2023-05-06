@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <h2>Edit Recipe</h2>
+  <form method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="recipe_id" name="recipe_id" placeholder="Enter Recipe ID" type="number" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+  {% if recipe %}
+  <form action="{{url_for('update_recipe', table=table)}}" method="POST" >
+    <div class="mb-3 form-container">
+      <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="title" name="title" value="{{ recipe.title}}" type="text" required>
+      <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="recipe_id" name="recipe_id" value="{{ recipe.recipe_id}}" type="number" required readonly>
+    </div>
+    <div class="mb-3 form-container">
+      <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="image" name="image" value="{{ recipe.image}}" type="text">
+      <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="sourceUrl" name="sourceUrl" value="{{ recipe.sourceUrl}}" type="text">
+    </div>
+    <div class="mb-3 form-container">
+      <textarea autocomplete="off" autofocus class="form-control mx-auto w-auto" id="ingredients" name="ingredients">{{ recipe.ingredients }}</textarea>
+      <textarea autocomplete="off" autofocus class="form-control mx-auto w-auto" id="instructions" name="instructions">{{ recipe.instructions }}</textarea>
+    </div>
+    <div class="mb-3 form-container">
+      <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="servings" name="servings" value="{{ recipe.servings }}" type="number">
+    </div>
+    <button type="submit" class="btn btn-primary">Update Recipe</button>
+  </form>
+  {% endif %}
+{% endblock %}

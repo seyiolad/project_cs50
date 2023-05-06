@@ -1,0 +1,4 @@
+Ask user for height input
+check if height is non-negative, greater than 0 and <= to 8
+loop from 1 to the height
+    print # for each iteration
